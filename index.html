@@ -628,3 +628,45 @@ document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pause();game=
  .controls .dpad .ctrl{font-size:25px!important}
 }
 </style>
+
+<style>
+/* D-pad and its four arrow keys: 1.5x the previous dimensions */
+.controls .dpad{
+ width:clamp(231px,28.5vw,291px)!important;
+ height:clamp(231px,28.5vw,291px)!important;
+ grid-template-columns:repeat(3,clamp(69px,8.55vw,93px))!important;
+ grid-template-rows:repeat(3,clamp(69px,8.55vw,93px))!important;
+ gap:4px!important;
+}
+.controls .dpad .ctrl{
+ font-size:clamp(40px,5.1vw,54px)!important;
+ border-radius:16px!important;
+}
+@media(max-width:520px){
+ .controls{
+  width:max-content!important;
+  max-width:none!important;
+  grid-template-columns:189px auto minmax(124px,1fr)!important;
+  gap:8px!important;
+  margin-left:auto!important;margin-right:auto!important;
+ }
+ .controls .dpad{
+  width:clamp(189px,54vw,225px)!important;
+  height:clamp(189px,54vw,225px)!important;
+  grid-template-columns:repeat(3,clamp(54px,15vw,69px))!important;
+  grid-template-rows:repeat(3,clamp(54px,15vw,69px))!important;
+  gap:4px!important;
+ }
+ .controls .dpad .ctrl{font-size:40px!important;border-radius:14px!important}
+}
+@media(max-width:370px){
+ .controls{grid-template-columns:168px auto 104px!important;gap:5px!important}
+ .controls .dpad{
+  width:168px!important;height:168px!important;
+  grid-template-columns:repeat(3,48px)!important;
+  grid-template-rows:repeat(3,48px)!important;
+  gap:4px!important;
+ }
+ .controls .dpad .ctrl{font-size:35px!important}
+}
+</style>
