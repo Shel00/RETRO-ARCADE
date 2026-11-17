@@ -670,3 +670,44 @@ document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pause();game=
  .controls .dpad .ctrl{font-size:35px!important}
 }
 </style>
+
+<style>
+/* True 2x enlargement from the currently deployed D-pad; reflow controls to prevent clipping */
+.controls{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ justify-content:center!important;
+ align-items:center!important;
+ gap:18px 28px!important;
+ width:100%!important;
+ max-width:100%!important;
+}
+.controls .dpad{
+ width:clamp(336px,38vw,582px)!important;
+ height:clamp(336px,38vw,582px)!important;
+ display:grid!important;
+ grid-template-columns:repeat(3,clamp(96px,12.15vw,186px))!important;
+ grid-template-rows:repeat(3,clamp(96px,12.15vw,186px))!important;
+ gap:6px!important;
+ flex:0 0 auto!important;
+ border-radius:50%!important;
+}
+.controls .dpad .ctrl{
+ width:100%!important;height:100%!important;
+ font-size:clamp(70px,7vw,108px)!important;
+ border-radius:22px!important;
+}
+.controls .transport-controls{flex-direction:row!important;gap:18px!important}
+.controls .actions{gap:18px!important}
+@media(max-width:520px){
+ .controls{gap:14px!important}
+ .controls .dpad{
+  width:min(94vw,336px)!important;height:min(94vw,336px)!important;
+  grid-template-columns:repeat(3,min(26.7vw,96px))!important;
+  grid-template-rows:repeat(3,min(26.7vw,96px))!important;
+  gap:4px!important;
+ }
+ .controls .dpad .ctrl{font-size:min(19vw,70px)!important;border-radius:17px!important}
+ .controls .transport-controls{gap:12px!important}
+}
+</style>
