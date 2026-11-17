@@ -444,3 +444,35 @@ document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pause();game=
 .console-actions button{margin:0;min-width:112px}
 @media(max-width:520px){.console-actions{gap:9px;margin-top:16px}.console-actions button{min-width:0;padding:13px 12px;font-size:8px}}
 </style>
+
+<style>
+/* Four directional arrows arranged around a circular center */
+.controls .dpad{
+ display:grid!important;
+ grid-template-columns:repeat(3,clamp(44px,6vw,60px))!important;
+ grid-template-rows:repeat(3,clamp(44px,6vw,60px))!important;
+ gap:5px!important;
+ justify-content:center;
+ align-items:center;
+ position:relative;
+}
+.controls .dpad .ctrl{
+ width:100%!important;height:100%!important;
+ border-radius:50%!important;
+ font-size:clamp(23px,3vw,30px)!important;
+ display:grid;place-items:center;
+ background:radial-gradient(circle at 35% 28%,#465a7c,#18253d 78%);
+ box-shadow:0 4px 0 #080d18,inset 0 1px 4px #ffffff35;
+}
+.controls .dpad [data-k=up]{grid-area:1/2!important}
+.controls .dpad [data-k=left]{grid-area:2/1!important}
+.controls .dpad [data-k=right]{grid-area:2/3!important}
+.controls .dpad [data-k=down]{grid-area:3/2!important}
+.controls .dpad .ctrl:active,.controls .dpad .ctrl.down{transform:scale(.92);filter:brightness(1.35)}
+@media(max-width:520px){
+ .controls .dpad{grid-template-columns:repeat(3,clamp(38px,11vw,52px))!important;grid-template-rows:repeat(3,clamp(38px,11vw,52px))!important;gap:4px!important}
+}
+@media(max-width:370px){
+ .controls .dpad{grid-template-columns:repeat(3,35px)!important;grid-template-rows:repeat(3,35px)!important;gap:3px!important}
+}
+</style>
