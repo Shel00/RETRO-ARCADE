@@ -592,3 +592,39 @@ document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pause();game=
  .controls .actions .ctrl{width:44px!important;height:44px!important}
 }
 </style>
+
+<style>
+/* Increase the four D-pad directions while preserving the SNES layout */
+.controls .dpad{
+ width:clamp(154px,19vw,194px)!important;
+ height:clamp(154px,19vw,194px)!important;
+ grid-template-columns:repeat(3,clamp(46px,5.7vw,62px))!important;
+ grid-template-rows:repeat(3,clamp(46px,5.7vw,62px))!important;
+ gap:3px!important;
+}
+.controls .dpad .ctrl{
+ font-size:clamp(27px,3.4vw,36px)!important;
+ border-radius:12px!important;
+}
+@media(max-width:520px){
+ .controls{grid-template-columns:minmax(126px,1fr) auto minmax(126px,1fr)!important;gap:5px!important}
+ .controls .dpad{
+  width:clamp(126px,36vw,150px)!important;
+  height:clamp(126px,36vw,150px)!important;
+  grid-template-columns:repeat(3,clamp(36px,10vw,46px))!important;
+  grid-template-rows:repeat(3,clamp(36px,10vw,46px))!important;
+  gap:3px!important;
+ }
+ .controls .dpad .ctrl{font-size:27px!important;border-radius:10px!important}
+}
+@media(max-width:370px){
+ .controls{grid-template-columns:112px auto 112px!important;gap:3px!important}
+ .controls .dpad{
+  width:112px!important;height:112px!important;
+  grid-template-columns:repeat(3,32px)!important;
+  grid-template-rows:repeat(3,32px)!important;
+  gap:3px!important;
+ }
+ .controls .dpad .ctrl{font-size:25px!important}
+}
+</style>
