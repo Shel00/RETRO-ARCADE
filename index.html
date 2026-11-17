@@ -364,3 +364,9 @@ function hit(){lives--;if(lives<=0){pause();say('GAME OVER — restart the level
 function loop(){if(!running)return;update();raf=requestAnimationFrame(loop)}function start(){if(running)return;running=true;say(game==='quest'?'GREENWOOD: ◀ ▶ move · A jump · B sword attack':'PLAYING — use the handheld controls.');loop()}function pause(){running=false;cancelAnimationFrame(raf)}
 document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pause();game=b.dataset.game;level=1;setup()});$('levels').onclick=e=>{let b=e.target.closest('[data-level]');if(b&&!b.disabled){pause();level=+b.dataset.level;setup()}};$('start').onclick=start;$('pause').onclick=()=>{pause();say('PAUSED. Press START to continue.')};$('restart').onclick=setup;$('player').onclick=()=>{let n=prompt('Choose a display name:',store.player==='Guest'?'':store.player);if(n&&n.trim()){store.player=n.trim().slice(0,18);persist();ui()}};document.querySelectorAll('[data-k]').forEach(b=>{let k=b.dataset.k;b.onpointerdown=e=>{e.preventDefault();keys[k]=true;b.classList.add('down')};['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>{keys[k]=false;b.classList.remove('down')}))});let map={ArrowLeft:'left',a:'left',ArrowRight:'right',d:'right',ArrowUp:'a',w:'a',' ':'a',Enter:'a',j:'a',k:'b'};addEventListener('keydown',e=>{if(map[e.key]){e.preventDefault();keys[map[e.key]]=true}});addEventListener('keyup',e=>{if(map[e.key])keys[map[e.key]]=false});setup()})();
 </script></body></html>
+
+<style>
+/* Keep a clear thumb gap between the left and right movement keys */
+.controls .dpad{display:flex;justify-content:center;gap:clamp(28px,9vw,64px)}
+@media(max-width:520px){.controls .dpad{gap:clamp(28px,9vw,48px)}}
+</style>
