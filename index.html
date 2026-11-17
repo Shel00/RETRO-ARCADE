@@ -776,3 +776,83 @@ document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pause();game=
  }
 }
 </style>
+
+<style>
+/* Normal-sized directional keys with generous gaps to prevent accidental presses */
+.controls{
+ display:flex!important;flex-wrap:nowrap!important;
+ justify-content:space-between!important;align-items:center!important;
+ gap:clamp(8px,2vw,18px)!important;width:100%!important;
+ max-width:760px!important;margin:18px auto 12px!important;
+}
+.controls .dpad{
+ width:clamp(148px,21vw,166px)!important;
+ height:clamp(140px,20vw,156px)!important;
+ flex:0 0 auto!important;
+ display:grid!important;
+ grid-template-columns:repeat(3,42px)!important;
+ grid-template-rows:repeat(3,42px)!important;
+ gap:8px!important;
+ align-content:center!important;justify-content:center!important;
+ border-radius:16px!important;
+ background:linear-gradient(145deg,#303c53,#1c2639)!important;
+ border:1px solid #78839a88!important;
+ box-shadow:inset 0 2px 7px #ffffff18,0 4px 10px #0005!important;
+}
+.controls .dpad .ctrl{
+ width:42px!important;height:42px!important;
+ border-radius:10px!important;font-size:25px!important;
+}
+.controls .dpad [data-k=up]{grid-area:1/2!important}
+.controls .dpad [data-k=left]{grid-area:2/1!important}
+.controls .dpad [data-k=right]{grid-area:2/3!important}
+.controls .dpad [data-k=down]{grid-area:3/2!important}
+.controls .transport-controls{
+ flex:0 0 auto!important;display:flex!important;flex-direction:row!important;
+ align-items:center!important;gap:clamp(7px,1.5vw,13px)!important;
+}
+.controls .transport{
+ width:clamp(25px,4vw,34px)!important;height:clamp(25px,4vw,34px)!important;
+ border-radius:50%!important;padding:0!important;font-size:17px!important;
+ display:grid!important;place-items:center!important;
+}
+.controls .transport span{display:none!important}
+.controls .actions{
+ flex:0 0 auto!important;display:flex!important;flex-direction:row!important;
+ align-items:center!important;gap:clamp(8px,1.7vw,16px)!important;
+}
+.controls .actions .ctrl{
+ width:clamp(58px,9vw,76px)!important;
+ height:clamp(64px,10vw,82px)!important;
+ border-radius:44%!important;font-size:clamp(24px,3.2vw,30px)!important;
+}
+@media(max-width:520px){
+ .controls{gap:5px!important}
+ .controls .dpad{
+  width:clamp(142px,43vw,158px)!important;
+  height:clamp(136px,41vw,150px)!important;
+  grid-template-columns:repeat(3,38px)!important;
+  grid-template-rows:repeat(3,38px)!important;
+  gap:7px!important;
+ }
+ .controls .dpad .ctrl{width:38px!important;height:38px!important;font-size:23px!important}
+ .controls .transport-controls{gap:4px!important}
+ .controls .transport{width:25px!important;height:25px!important;font-size:14px!important}
+ .controls .actions{gap:5px!important}
+ .controls .actions .ctrl{
+  width:clamp(42px,13vw,54px)!important;height:clamp(48px,14vw,60px)!important;
+  font-size:21px!important;
+ }
+}
+@media(max-width:370px){
+ .controls{gap:3px!important}
+ .controls .dpad{
+  width:132px!important;height:130px!important;
+  grid-template-columns:repeat(3,34px)!important;
+  grid-template-rows:repeat(3,34px)!important;gap:6px!important;
+ }
+ .controls .dpad .ctrl{width:34px!important;height:34px!important;font-size:21px!important}
+ .controls .transport{width:22px!important;height:22px!important;font-size:12px!important}
+ .controls .actions .ctrl{width:40px!important;height:45px!important}
+}
+</style>
