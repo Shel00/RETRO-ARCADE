@@ -32,6 +32,38 @@ footer{padding:28px 16px 40px;letter-spacing:1px}
 
 .catalog-section{margin:28px 0 34px}.catalog-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.eyebrow{font:8px 'Press Start 2P';color:var(--cyan);letter-spacing:1.5px}.catalog-heading h2,.identity-panel h2{font:clamp(14px,2vw,19px) 'Press Start 2P';line-height:1.8;color:var(--gold);margin:12px 0 7px}.catalog-heading p,.identity-panel p{color:#aeb8ca;font-size:13px;line-height:1.6;margin:0;max-width:620px}.catalog-count{min-width:82px;text-align:center;padding:13px;background:linear-gradient(145deg,#273751,#121d30);border:1px solid #64718b;border-radius:13px}.catalog-count b{display:block;font:22px 'Press Start 2P';color:var(--gold)}.catalog-count small{font-size:8px;color:#aeb8ca}.filter-row{display:flex;gap:8px;overflow-x:auto;padding:2px 0 13px}.filter{white-space:nowrap;background:#17243a;border:1px solid #435573;color:#dce6f8;border-radius:22px;padding:9px 13px;font-size:11px}.filter span{color:var(--cyan);margin-left:5px}.filter.active{background:#3a3540;border-color:var(--gold);color:var(--gold)}.catalog-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.catalog-card{padding:0;overflow:hidden;text-align:left;background:linear-gradient(155deg,#202e49,#121a2b);border:1px solid #465775;border-radius:14px;color:#f5f6ff;min-width:0;cursor:pointer;box-shadow:0 9px 22px #0003;transition:transform .18s,border-color .18s}.catalog-card:hover{transform:translateY(-3px);border-color:var(--gold)}.catalog-art{height:88px;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 35%,#60769a,#273957 60%,#17243a);font-size:39px}.catalog-art:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,#101a2c99)}.catalog-art span{position:relative;z-index:1;filter:drop-shadow(0 6px 6px #0009)}.catalog-art i{position:absolute;right:8px;top:8px;z-index:2;font-style:normal;font:7px 'Press Start 2P';color:#e6edf9;background:#111a2bbb;padding:6px;border-radius:5px}.catalog-copy{padding:11px}.catalog-copy>small{display:block;color:var(--cyan);font-size:9px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}.catalog-copy strong{display:block;font-size:12px;line-height:1.4;color:var(--gold)}.catalog-copy p{font-size:10px;line-height:1.5;color:#aeb8ca;min-height:45px;margin:6px 0 9px}.catalog-copy em{font-style:normal;font-size:8px;letter-spacing:.5px}.catalog-copy .live{color:#86edc0}.catalog-copy .soon{color:#c3a9f3}.identity-panel{display:flex;justify-content:space-between;align-items:center;gap:24px;margin:35px 0;padding:22px;background:linear-gradient(120deg,#202e49,#121a2b);border:1px solid #52617d;border-radius:18px;box-shadow:0 15px 35px #0004}.identity-panel h2{font-size:12px}.identity-stats{display:flex;gap:20px}.identity-stats div{text-align:center;min-width:65px}.identity-stats b{display:block;font:18px 'Press Start 2P';color:var(--cyan);margin-bottom:9px}.identity-stats small{font-size:8px;color:#aeb8ca}
 @media(max-width:1000px){.catalog-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:720px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.identity-panel{display:block}.identity-stats{justify-content:space-between;margin-top:20px}.catalog-heading h2{font-size:14px}}@media(max-width:390px){.catalog-copy{padding:9px}.catalog-copy strong{font-size:11px}.catalog-art{height:76px}}
+
+/* V6 layout: lead with a spacious, full-width game console */
+main{max-width:1440px;display:flex;flex-direction:column;gap:0;padding-left:clamp(14px,2.5vw,36px);padding-right:clamp(14px,2.5vw,36px)}
+.hero{order:0;padding:20px 0 18px}
+.layout{order:1;display:grid;grid-template-columns:minmax(0,1fr);gap:22px;width:100%;margin:0 0 42px}
+.layout>section{min-width:0;width:100%}
+.cabinet{width:100%;max-width:none;margin:0;padding:clamp(14px,2vw,26px);border-radius:30px}
+.screen{padding:clamp(10px,1.5vw,18px)}
+canvas{width:100%;height:auto;aspect-ratio:4/3}
+.layout>section>.primary,.layout>section>.secondary{margin-top:16px;margin-right:10px}
+.status{margin-top:16px}
+.side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:8px}
+.side .panel{margin:0;min-width:0}
+.library{order:2;margin:12px 0 38px}
+.catalog-section{order:3;margin:16px 0 44px}
+.identity-panel{order:4}
+.game-grid{gap:18px}
+.catalog-grid{gap:16px}
+@media(max-width:760px){
+ main{padding-left:14px;padding-right:14px}
+ .layout{gap:16px;margin-bottom:30px}
+ .cabinet{padding:12px;border-radius:23px}
+ .side{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .game-grid{gap:10px}
+ .catalog-grid{gap:10px}
+}
+@media(max-width:480px){
+ .side{grid-template-columns:1fr}
+ .cabinet{padding:9px;border-radius:18px}
+ .screen{padding:7px}
+ .layout>section>.primary,.layout>section>.secondary{margin:12px 6px 0 0}
+}
 </style></head><body>
 <header><div class="brand">★ RETRO-ARCADE<small>PRESS START • PLAY FOREVER</small></div><button class="chip" id="player">GUEST</button></header>
 <main><section class="hero"><div style="font:8px 'Press Start 2P';color:var(--cyan)">✦ ORIGINAL ARCADE WORLDS ✦</div><h1>INSERT COIN.<br>START PLAYING.</h1><p>Thirty original game concepts across classic arcade, adventure worlds and anime-inspired legends. Discover your next world, master each cabinet and chase your personal best.</p></section>
