@@ -131,10 +131,40 @@ header{position:relative;z-index:5}
 
 /* Character sprite polish */
 .art{position:relative}.art .pixel-avatar{width:72px;height:88px;position:relative;display:block;image-rendering:pixelated;filter:drop-shadow(0 8px 8px #0009)}
+
+/* V8 — spacious, curated game library */
+.library{padding:clamp(18px,3vw,34px);margin:18px 0 48px;border:1px solid #8296bb33;border-radius:26px;background:linear-gradient(145deg,#121e33ed,#0d1525ed);box-shadow:0 24px 60px #0005,inset 0 1px #ffffff0b}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:22px;margin:0 0 26px;padding:0 2px 21px;border-bottom:1px solid #ffffff16}
+.section-head>div{min-width:0}
+.library-kicker{display:block;color:#7fe8e9;font:8px 'Press Start 2P';letter-spacing:1.4px;margin-bottom:12px}
+.section-head h2{font:clamp(14px,2vw,21px)/1.7 'Press Start 2P';color:#ffe0a0;margin:0 0 7px;text-shadow:0 3px 18px #ffcb6730}
+.section-head p{margin:0;color:#aab8d0;font-size:13px;line-height:1.6}
+.library-count{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid #78dfe344;border-radius:12px;background:#102a35;color:#a6e9e7;font:7px 'Press Start 2P';white-space:nowrap}
+.library-count b{font-size:19px;color:#ffe0a0}
+.game-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.game-card{display:flex;flex-direction:column;min-height:100%;border:1px solid #8296bb33;border-radius:19px;background:#111d31;box-shadow:0 12px 28px #0003;overflow:hidden}
+.game-card:hover{transform:translateY(-5px);border-color:#f7cf72;box-shadow:0 20px 38px #0006,0 0 24px #f7cf7215}
+.game-card.selected{border-color:#f7cf72;box-shadow:0 0 0 1px #f7cf7255,0 15px 34px #0005}
+.art{height:clamp(145px,16vw,205px);flex:0 0 auto;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.game-card:nth-child(1) .art{background:radial-gradient(circle at 50% 36%,#7584a9,#344968 52%,#17263c)}
+.game-card:nth-child(2) .art{background:radial-gradient(circle at 50% 38%,#537ca0,#203c5c 52%,#101c35)}
+.game-card:nth-child(3) .art{background:radial-gradient(circle at 50% 38%,#736aa7,#3b356e 52%,#1a1b3d)}
+.game-card:nth-child(4) .art{background:radial-gradient(circle at 50% 38%,#bd8056,#70475a 52%,#30243e)}
+.art:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,#ffffff18,transparent 42%,#0005),repeating-linear-gradient(0deg,transparent 0 13px,#ffffff07 14px)}
+.art:after{content:'';position:absolute;z-index:-1;width:190px;height:190px;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 18px #ffffff08,0 0 0 38px #ffffff05}
+.art span{font-size:clamp(55px,6vw,78px);filter:drop-shadow(0 12px 12px #0008);transition:transform .25s}
+.game-card:hover .art span{transform:translateY(-7px) scale(1.08)}
+.card-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:17px 17px 18px}
+.card-copy strong{font:9px/1.8 'Press Start 2P';color:#ffe0a0;min-height:36px}
+.card-copy small{font-size:12px;line-height:1.65;color:#b3bfd3;min-height:58px}
+.card-tag{margin-top:auto;padding:7px 10px;border:1px solid #72e4ee44;border-radius:20px;background:#102a35;color:#8be9e7;font-size:9px;letter-spacing:.8px}
+.game-card.selected .card-tag{border-color:#f7cf7270;background:#3a3025;color:#ffdc8b}
+@media(max-width:900px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.art{height:clamp(130px,24vw,185px)}}
+@media(max-width:520px){.library{padding:16px;margin:8px 0 34px;border-radius:20px}.section-head{align-items:flex-start;margin-bottom:17px;padding-bottom:16px}.section-head h2{font-size:12px}.section-head p{font-size:12px}.library-count{padding:9px;gap:7px;font-size:6px}.library-count b{font-size:16px}.game-grid{gap:11px}.art{height:125px}.card-copy{padding:12px}.card-copy strong{font-size:7px;min-height:31px}.card-copy small{font-size:10px;min-height:58px}.card-tag{font-size:8px;padding:6px 8px}}
 </style></head><body>
 <header><div class="brand">★ RETRO-ARCADE<small>PRESS START • PLAY FOREVER</small></div><button class="chip" id="player">GUEST</button></header>
 <main><section class="hero"><div class="hero-copy"><div class="hero-kicker"><span class="live-dot"></span> THE NEXT LEVEL OF RETRO GAMING</div><h1>YOUR ARCADE.<br><em>YOUR LEGEND.</em></h1><p>Choose your world. Beat the high score. Become the legend. Thirty original arcade worlds are waiting.</p><div class="hero-actions"><a href="#play" class="hero-cta">▶ PLAY NOW</a><a href="#library" class="hero-link">EXPLORE THE LIBRARY ↓</a></div><div class="hero-meta"><span>✦ 30 WORLDS</span><span>✦ FREE TO PLAY</span><span>✦ MOBILE READY</span></div></div><div class="hero-art" aria-label="Retro arcade pixel world artwork"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="pixel-sun"></div><div class="pixel-mountain mountain-one"></div><div class="pixel-mountain mountain-two"></div><div class="hero-ship">🚀</div><div class="hero-crystal">💎</div><div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div><div class="hero-art-caption">INSERT COIN <b>▶</b> PRESS START</div></div></section>
-<section class="library" id="library"><div class="section-head"><h2>THE ARCADE COLLECTION</h2><span>4 playable arcade games · 26 more worlds in development</span></div><div class="game-grid">
+<section class="library" id="library"><div class="section-head"><div><span class="library-kicker">SELECT YOUR NEXT ADVENTURE</span><h2>PLAYABLE ARCADE GAMES</h2><p>Four worlds are ready. Pick a game and jump straight into the action.</p></div><span class="library-count"><b>04</b> PLAY NOW</span></div><div class="game-grid">
 <button class="game-card selected" data-game="quest"><div class="art"><span>🗝️</span></div><div class="card-copy"><strong>PIXEL QUEST</strong><small>Platform adventure · keys, hazards and boss gates</small><span class="card-tag">Adventure</span></div></button>
 <button class="game-card" data-game="defender"><div class="art"><span>🚀</span></div><div class="card-copy"><strong>STAR DEFENDER</strong><small>Space combat · enemy formations and sector bosses</small><span class="card-tag">Shooter</span></div></button>
 <button class="game-card" data-game="maze"><div class="art"><span>🔦</span></div><div class="card-copy"><strong>LASER MAZE</strong><small>Logic puzzle · switches, barriers and escape routes</small><span class="card-tag">Puzzle</span></div></button>
