@@ -89,3 +89,36 @@ exception when duplicate_object then null; when undefined_object then null; end 
 do $$ begin
   alter publication supabase_realtime add table public.dungeon_runs;
 exception when duplicate_object then null; when undefined_object then null; end $$;
+
+-- Join by invite code without exposing private party lookup to anonymous users.
+create or replace function public.join_party_by_code(invite_code_input text, character_id_input uuid)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  target_party uuid;
+  current_owner uuid;
+begin
+  select owner_id into current_owner from public.characters
+  where id = character_id_input;
+  if current_owner is null or current_owner <> auth.uid() then
+    raise exception 'You do not own this character';
+  end if;
+  select id into target_party from public.parties
+  where invite_code = upper(invite_code_input) and status = 'forming'
+  limit 1;
+  if target_party is null then
+    raise exception 'Party not found or no longer accepting members';
+  end if;
+  if (select count(*) from public.party_members where party_id=target_party) >= 4 then
+    raise exception 'Party is full';
+  end if;
+  insert into public.party_members(party_id,character_id)
+  values(target_party,character_id_input);
+  return target_party;
+end;
+$$;
+revoke all on function public.join_party_by_code(text,uuid) from public;
+grant execute on function public.join_party_by_code(text,uuid) to authenticated;
