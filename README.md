@@ -1,15 +1,24 @@
-# RETRO-ARCADE — Anime Action Collection
+# Voice of the Swords — The Ashen Crown
 
-Four original browser-based 3D anime-inspired action games built with Three.js:
+A landscape-first, top-down action RPG built as a self-contained HTML5 Canvas game. The arcade collection has been replaced with one focused adventure.
 
-- Voice of the Swords — fantasy sword-action RPG
-- Ancient Elder — mythic exploration adventure
-- Robo Quest — sci-fi mech shooter
-- Tokyo Mobs — neon street brawler
+## Play
+Open the GitHub Pages site: https://shel00.github.io/RETRO-ARCADE/
 
-Each game has five stages, procedural 3D environments, enemies, collectibles, boss encounters, keyboard and touch controls, and local progress saving.
+Designed for mobile landscape and desktop. On phones, rotate to landscape.
 
-## Run
-Open the GitHub Pages site in a modern browser. Three.js is loaded as an ES module from jsDelivr, so an internet connection is required.
+## Controls
+- Move: WASD / arrow keys or the on-screen D-pad
+- Sword attack: Space / J or the SWORD button
+- Interact: E or the TALK button (opens nearby chests, speaks to people, or uses a potion when no target is nearby)
 
-Controls: WASD / arrow keys to move, Space or J to attack, K for special, L to dash. On mobile, use the on-screen controls in landscape orientation.
+## Adventure systems
+- Explore a large scrolling kingdom with village, river crossing, forest paths and ancient ruins
+- Visible directional sword, attack arc, enemy hit effects and damage
+- Slimes, wolves and a wraith with different health and movement
+- NPC conversations, quest progression, treasure chests, gold and healing potions
+- XP, levelling, stronger attacks, increased health and mana
+- Landscape-first pixel-art presentation and touch controls
+
+## Technology
+One index.html file. No build step, external libraries, asset downloads or runtime network dependency. All artwork is drawn by Canvas.
